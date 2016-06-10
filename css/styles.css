@@ -1,9 +1,18 @@
 
+.sparkle {
+  position: absolute;
+  left: 3vw;
+  top: 10vw;
+  width: 10px;
+  height: 10px;
+  background: gold;
+  display: none;
+}
 
 .container {
   margin: auto;
   text-align: center;
-  background: gold;
+  background: grey;
   padding: 50px;
 }
 

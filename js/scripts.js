@@ -25,7 +25,12 @@ function makeFilteredArray(limit) {
   }
 }
 
-
+function makeSparkle(x,y,id) {
+  debugger;
+  $('body').append("<div class='sparkle' id='sparkle"+id+"'></div>")
+  $('#sparkle2').css({'top': x, 'left': y});
+  $('#sparkle' + id).fadeIn("slow ").fadeOut('slow');
+}
 
 
 
@@ -42,9 +47,11 @@ $(function() {
 
   $('#output').click(function() {
     var limit = parseInt($('input').val() * 1);
-    alert(limit);
-    makeFilteredArray(limit);
-    filteredArray = [];
+    // alert(limit);
+    // makeFilteredArray(limit);
+    // filteredArray = [];
+
+    makeSparkle('10vw','5px', "23");
   });
 
 });
