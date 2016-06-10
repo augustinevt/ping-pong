@@ -1,0 +1,27 @@
+
+
+.container {
+  margin: auto;
+  text-align: center;
+  background: grey;
+  padding: 50px;
+}
+
+#output {
+  width: 30vw;
+  min-height: 30vw;
+  background: white;
+  margin: auto;
+  font-family: monospace;
+  font-size: 2em;
+  padding: 34px;
+}
+
+h6 {
+  margin: 20px;
+}
+
+
+input {
+  margin: 20px;
+}
