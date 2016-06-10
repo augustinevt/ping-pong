@@ -1,6 +1,9 @@
-
+body {
+  font-family: monospace;
+  font-size: 2.5em;
+}
 .sparkle {
-  position: absolute;
+  position: absolute;;
   left: 3vw;
   top: 10vw;
   width: 10px;
@@ -9,10 +12,18 @@
   display: none;
 }
 
+
+.sparkle-container {
+  margin: auto;
+  width: 60vw;
+  height: 140vh;
+  position: relative;
+}
+
 .container {
   margin: auto;
   text-align: center;
-  background: grey;
+
   padding: 50px;
 }
 
@@ -33,4 +44,12 @@ h6 {
 
 input {
   margin: 20px;
+  border: none;
+  border-bottom: solid;
+  font-size: 1em;
+  width: 50vw;
+}
+
+input:focus {
+  outline: none;
 }

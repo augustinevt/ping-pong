@@ -26,10 +26,24 @@ function makeFilteredArray(limit) {
 }
 
 function makeSparkle(x,y,id) {
-  debugger;
-  $('body').append("<div class='sparkle' id='sparkle"+id+"'></div>")
-  $('#sparkle2').css({'top': x, 'left': y});
-  $('#sparkle' + id).fadeIn("slow ").fadeOut('slow');
+  // debugger;
+  $('.sparkle-container').append("<div class='sparkle' id='sparkle"+id+"'></div>")
+  $('#sparkle' + id).css({'top': x, 'left': y});
+  $('#sparkle' + id).fadeIn( Math.random() * 1000).fadeOut( Math.random() * 700);
+}
+
+function makeManySparkles(density) {
+  var width = $('.sparkle-container').width();
+  var height = $('.sparkle-container').height();
+  // alert(width);
+  // alert(height);
+  for(i=0; i < density; i++) {
+    var y = Math.random() * (width) + "px";
+    console.log(x);
+    var x = Math.random() * (height) + "px";
+    console.log(x);
+    setTimeout( makeSparkle(x,y,i), 500) ;
+  }
 }
 
 
@@ -45,13 +59,20 @@ function makeSparkle(x,y,id) {
 $(function() {
 
 
-  $('#output').click(function() {
-    var limit = parseInt($('input').val() * 1);
-    // alert(limit);
-    // makeFilteredArray(limit);
-    // filteredArray = [];
+  $(document).keydown(function(e) {
 
-    makeSparkle('10vw','5px', "23");
+    if (e.which === 13) {
+    $('#output').html('');
+    var limit = parseInt($('input').val() * 1);
+    //alert(limit);
+    makeManySparkles(100);
+    makeManySparkles(100);
+    makeManySparkles(100);
+    makeFilteredArray(limit);
+    filteredArray = [];
+    e.preventDefault();
+   }
+
   });
 
 });
