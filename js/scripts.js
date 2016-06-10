@@ -1,7 +1,5 @@
-
 var filteredArray = [];
 var testLimit = 15;
-
 
 function makeFilteredArray(limit) {
   for(i=1; i <= limit; i++) {
@@ -19,15 +17,14 @@ function makeFilteredArray(limit) {
       $('#output').append('<h3> pong </h3>');
     }else {
       filteredArray.push(i);
-      console.log(i)
+      console.log(i);
       $('#output').append('<h6>' + i + '</h6>')
     }
   }
 }
 
 function makeSparkle(x,y,id) {
-  // debugger;
-  $('.sparkle-container').append("<div class='sparkle' id='sparkle"+id+"'></div>")
+  $('.sparkle-container').append("<div class='sparkle' id='sparkle"+id+"'></div>");
   $('#sparkle' + id).css({'top': x, 'left': y});
   $('#sparkle' + id).fadeIn( Math.random() * 1000).fadeOut( Math.random() * 700);
 }
@@ -42,25 +39,14 @@ function makeManySparkles(density) {
     console.log(x);
     var x = Math.random() * (height) + "px";
     console.log(x);
-    setTimeout( makeSparkle(x,y,i), 500) ;
+    setTimeout( makeSparkle(x,y,i), 500);
   }
 }
 
-
-
-
-
-
-
-
 ////// UI
 
-
 $(function() {
-
-
   $(document).keydown(function(e) {
-
     if (e.which === 13) {
     $('#output').html('');
     var limit = parseInt($('input').val() * 1);
@@ -72,7 +58,5 @@ $(function() {
     filteredArray = [];
     e.preventDefault();
    }
-
   });
-
 });
