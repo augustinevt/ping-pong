@@ -28,7 +28,9 @@ This small application will list numbers up to user provided limit, replacing an
 
   * It will replace all numbers divisible by fifteen with "Pong Pong"
     * input = 30
-    * output = [1,2,"Ping",4,"Pong", "Ping",...,14, "Ping Pong",...,29,"Ping Pong"]      
+    * output = [1,2,"Ping",4,"Pong", "Ping",...,14, "Ping Pong",...,29,"Ping Pong"]  
+
+  * It will make small divs appear as sparkles!    
 
 ## Setup/Installation Requirements
 

@@ -4,23 +4,16 @@ var testLimit = 15;
 function makeFilteredArray(limit) {
   for(i=1; i <= limit; i++) {
     if (i % 15 === 0) {
-      filteredArray.push('ping pong');
-      console.log('ping pong');
-      $('#output').append('<h2> ping pong </h2>');
+      filteredArray.push('ping-pong');
     } else if (i % 3 === 0) {
       filteredArray.push('ping');
-      console.log('ping');
-      $('#output').append('<h3> ping </h3>');
     } else if (i % 5 === 0) {
       filteredArray.push('pong');
-      console.log('pong');
-      $('#output').append('<h3> pong </h3>');
     }else {
       filteredArray.push(i);
-      console.log(i);
-      $('#output').append('<h6>' + i + '</h6>')
     }
   }
+  return filteredArray;
 }
 
 function makeSparkle(x,y,id) {
@@ -36,9 +29,9 @@ function makeManySparkles(density) {
   // alert(height);
   for(i=0; i < density; i++) {
     var y = Math.random() * (width) + "px";
-    console.log(x);
+    // console.log(x);
     var x = Math.random() * (height) + "px";
-    console.log(x);
+    // console.log(x);
     setTimeout( makeSparkle(x,y,i), 500);
   }
 }
@@ -50,13 +43,15 @@ $(function() {
     if (e.which === 13) {
     $('#output').html('');
     var limit = parseInt($('input').val() * 1);
-    //alert(limit);
-    makeManySparkles(100);
-    makeManySparkles(100);
-    makeManySparkles(100);
-    makeFilteredArray(limit);
-    filteredArray = [];
+    makeManySparkles(limit/3);
+    makeManySparkles(limit/3);
+    makeManySparkles(limit/3);
+    var output = makeFilteredArray(limit);
     e.preventDefault();
    }
+   for(i=0; i < output.length; i++ ){
+     $('#output').append('<h3>'+ output[i] +'</h3>');
+   }
+   filteredArray = [];
   });
 });
