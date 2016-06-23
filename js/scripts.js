@@ -27,6 +27,7 @@ function makeManySparkles(density, width, height) {
     var x = Math.random() * height;
     sparkleArray.push(new Sparkle(x,y,i));
   }
+  return sparkleArray;
 }
 
 $(function() {
@@ -39,10 +40,10 @@ $(function() {
       var height = $('.sparkle-container').height();
       var limit = parseInt($('input').val() * 1);
       output = makeFilteredArray(limit);
-      makeManySparkles((limit * 3), width, height );
+      var sparkleArray = makeManySparkles((limit * 3), width, height );
       for(i=0; i < output.length; i++ ){
         $('#output').append('<h3>'+ output[i] +'</h3>');
-      }  
+      }
       sparkleArray.forEach(function(sparkle) {
         $('.sparkle-container').append("<div class='sparkle' id='sparkle"+sparkle.id+"'></div>");
         $('#sparkle' + sparkle.id).css({'top': sparkle.x, 'left': sparkle.y});
